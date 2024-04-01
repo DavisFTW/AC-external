@@ -1,0 +1,352 @@
+﻿  AC_external.cpp
+  TH32CS.cpp
+C:\Users\Admin\source\repos\AC_external\AC_external\AC_external.cpp(7,2): error C2143: syntax error: missing ';' before 'return'
+C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23): error C2678: binary '==': no operator found which takes a left-hand operand of type 'std::string_view' (or there is no acceptable conversion)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\guiddef.h(192,15):
+  could be 'bool operator ==(const GUID &,const GUID &)'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool operator ==(const GUID &,const GUID &)': cannot convert argument 1 from 'std::string_view' to 'const GUID &'
+  		C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  		Reason: cannot convert from 'std::string_view' to 'const GUID'
+  		C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  		No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\guiddef.h(192,15):
+  or 'bool operator ==(const GUID &,const GUID &)' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool operator ==(const GUID &,const GUID &)': cannot convert argument 1 from 'WCHAR [260]' to 'const GUID &'
+  		C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,44):
+  		Reason: cannot convert from 'WCHAR [260]' to 'const GUID'
+  		C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,44):
+  		'_GUID::_GUID': no overloaded function could convert all the argument types
+  			C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\guiddef.h(27,1):
+  			could be '_GUID::_GUID(_GUID &&)'
+  				C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,44):
+  				'_GUID::_GUID(_GUID &&)': cannot convert argument 1 from 'WCHAR [260]' to '_GUID &&'
+  					C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,44):
+  					Reason: cannot convert from 'WCHAR [260]' to '_GUID'
+  					C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,44):
+  					Conversion requires a second user-defined-conversion operator or constructor
+  			C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\guiddef.h(27,1):
+  			or       '_GUID::_GUID(const _GUID &)'
+  				C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,44):
+  				'_GUID::_GUID(const _GUID &)': cannot convert argument 1 from 'WCHAR [260]' to 'const _GUID &'
+  					C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,44):
+  					Reason: cannot convert from 'WCHAR [260]' to 'const _GUID'
+  					C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,44):
+  					Conversion requires a second user-defined-conversion operator or constructor
+  			C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,44):
+  			while trying to match the argument list '(WCHAR [260])'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(1661,27):
+  or       'bool std::operator ==<char,std::char_traits<char>,2>(const std::basic_string_view<char,std::char_traits<char>>,const std::basic_string_view<char,std::char_traits<char>>) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==<char,std::char_traits<char>,2>(const std::basic_string_view<char,std::char_traits<char>>,const std::basic_string_view<char,std::char_traits<char>>) noexcept': cannot convert argument 2 from 'WCHAR [260]' to 'const std::basic_string_view<char,std::char_traits<char>>'
+  		C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,44):
+  		'std::basic_string_view<char,std::char_traits<char>>::basic_string_view': no overloaded function could convert all the argument types
+  			C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(1198,20):
+  			could be 'std::basic_string_view<char,std::char_traits<char>>::basic_string_view(const char *const ) noexcept'
+  				C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,44):
+  				'std::basic_string_view<char,std::char_traits<char>>::basic_string_view(const char *const ) noexcept': cannot convert argument 1 from 'WCHAR [260]' to 'const char *const '
+  					C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,44):
+  					Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+  			C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(1216,5):
+  			or       'std::basic_string_view<char,std::char_traits<char>>::basic_string_view(_Iter,_Sent) noexcept(<expr>)'
+  			C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,44):
+  			while trying to match the argument list '(WCHAR [260])'
+  C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  or       'built-in C++ operator==(WCHAR [260], WCHAR [260])'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'==': cannot convert argument 1 from 'std::string_view' to 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\utility(490,27):
+  or       'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)': could not deduce template argument for 'const std::pair<_Ty1,_Ty2> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xutility(1686,5):
+  or       'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)': could not deduce template argument for 'const std::reverse_iterator<_BidIt> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xutility(4228,5):
+  or       'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)': could not deduce template argument for 'const std::move_iterator<_Iter> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\iterator(306,17):
+  or       'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept': could not deduce template argument for 'const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\iterator(488,17):
+  or       'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)': could not deduce template argument for 'const std::istreambuf_iterator<_Elem,_Traits> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\tuple(872,27):
+  or       'bool std::operator ==(const std::tuple<_Types...> &,const std::tuple<_Types...> &)'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::tuple<_Types...> &,const std::tuple<_Types...> &)': could not deduce template argument for 'const std::tuple<_Types...> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xmemory(1042,30):
+  or       'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept': could not deduce template argument for 'const std::allocator<_Ty> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(1647,27):
+  or       'bool std::operator ==(const std::basic_string_view<_Elem,_Traits>,const std::basic_string_view<_Elem,_Traits>) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::basic_string_view<_Elem,_Traits>,const std::basic_string_view<_Elem,_Traits>) noexcept': could not deduce template argument for 'const std::basic_string_view<_Elem,_Traits>' from 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(5041,30):
+  or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(5047,30):
+  or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(1842,17):
+  or       'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(1879,17):
+  or       'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(3470,30):
+  or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(3518,30):
+  or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\utility(490,27):
+  or 'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)': could not deduce template argument for 'const std::pair<_Ty1,_Ty2> &' from 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xutility(1686,5):
+  or 'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)': could not deduce template argument for 'const std::reverse_iterator<_BidIt> &' from 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xutility(4228,5):
+  or 'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)': could not deduce template argument for 'const std::move_iterator<_Iter> &' from 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\iterator(306,17):
+  or 'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept': could not deduce template argument for 'const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &' from 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\iterator(488,17):
+  or 'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)': could not deduce template argument for 'const std::istreambuf_iterator<_Elem,_Traits> &' from 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\tuple(872,27):
+  or 'bool std::operator ==(const std::tuple<_Types...> &,const std::tuple<_Types...> &)' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::tuple<_Types...> &,const std::tuple<_Types...> &)': could not deduce template argument for 'const std::tuple<_Types...> &' from 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xmemory(1042,30):
+  or 'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept': could not deduce template argument for 'const std::allocator<_Ty> &' from 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(1647,27):
+  or 'bool std::operator ==(const std::basic_string_view<_Elem,_Traits>,const std::basic_string_view<_Elem,_Traits>) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::basic_string_view<_Elem,_Traits>,const std::basic_string_view<_Elem,_Traits>) noexcept': could not deduce template argument for 'const std::basic_string_view<_Elem,_Traits>' from 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(1661,27):
+  or 'bool std::operator ==(const std::basic_string_view<_Elem,_Traits>,const _Identity<std::basic_string_view<_Elem,_Traits>>::type) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::basic_string_view<_Elem,_Traits>,const _Identity<std::basic_string_view<_Elem,_Traits>>::type) noexcept': could not deduce template argument for 'const std::basic_string_view<_Elem,_Traits>' from 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(5041,30):
+  or 'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(5047,30):
+  or 'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(1842,17):
+  or 'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(1879,17):
+  or 'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(3470,30):
+  or 'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'WCHAR [260]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(3518,30):
+  or 'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  	'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'WCHAR [260]'
+  C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(19,23):
+  while trying to match the argument list '(std::string_view, WCHAR [260])'
+  
+C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23): error C2678: binary '==': no operator found which takes a left-hand operand of type 'std::string_view' (or there is no acceptable conversion)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\guiddef.h(192,15):
+  could be 'bool operator ==(const GUID &,const GUID &)'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool operator ==(const GUID &,const GUID &)': cannot convert argument 1 from 'std::string_view' to 'const GUID &'
+  		C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  		Reason: cannot convert from 'std::string_view' to 'const GUID'
+  		C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  		No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\guiddef.h(192,15):
+  or 'bool operator ==(const GUID &,const GUID &)' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool operator ==(const GUID &,const GUID &)': cannot convert argument 1 from 'WCHAR [256]' to 'const GUID &'
+  		C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,45):
+  		Reason: cannot convert from 'WCHAR [256]' to 'const GUID'
+  		C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,45):
+  		'_GUID::_GUID': no overloaded function could convert all the argument types
+  			C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\guiddef.h(27,1):
+  			could be '_GUID::_GUID(_GUID &&)'
+  				C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,45):
+  				'_GUID::_GUID(_GUID &&)': cannot convert argument 1 from 'WCHAR [256]' to '_GUID &&'
+  					C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,45):
+  					Reason: cannot convert from 'WCHAR [256]' to '_GUID'
+  					C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,45):
+  					Conversion requires a second user-defined-conversion operator or constructor
+  			C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\guiddef.h(27,1):
+  			or       '_GUID::_GUID(const _GUID &)'
+  				C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,45):
+  				'_GUID::_GUID(const _GUID &)': cannot convert argument 1 from 'WCHAR [256]' to 'const _GUID &'
+  					C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,45):
+  					Reason: cannot convert from 'WCHAR [256]' to 'const _GUID'
+  					C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,45):
+  					Conversion requires a second user-defined-conversion operator or constructor
+  			C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,45):
+  			while trying to match the argument list '(WCHAR [256])'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(1661,27):
+  or       'bool std::operator ==<char,std::char_traits<char>,2>(const std::basic_string_view<char,std::char_traits<char>>,const std::basic_string_view<char,std::char_traits<char>>) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==<char,std::char_traits<char>,2>(const std::basic_string_view<char,std::char_traits<char>>,const std::basic_string_view<char,std::char_traits<char>>) noexcept': cannot convert argument 2 from 'WCHAR [256]' to 'const std::basic_string_view<char,std::char_traits<char>>'
+  		C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,45):
+  		'std::basic_string_view<char,std::char_traits<char>>::basic_string_view': no overloaded function could convert all the argument types
+  			C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(1198,20):
+  			could be 'std::basic_string_view<char,std::char_traits<char>>::basic_string_view(const char *const ) noexcept'
+  				C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,45):
+  				'std::basic_string_view<char,std::char_traits<char>>::basic_string_view(const char *const ) noexcept': cannot convert argument 1 from 'WCHAR [256]' to 'const char *const '
+  					C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,45):
+  					Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+  			C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(1216,5):
+  			or       'std::basic_string_view<char,std::char_traits<char>>::basic_string_view(_Iter,_Sent) noexcept(<expr>)'
+  			C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,45):
+  			while trying to match the argument list '(WCHAR [256])'
+  C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  or       'built-in C++ operator==(WCHAR [256], WCHAR [256])'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'==': cannot convert argument 1 from 'std::string_view' to 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\utility(490,27):
+  or       'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)': could not deduce template argument for 'const std::pair<_Ty1,_Ty2> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xutility(1686,5):
+  or       'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)': could not deduce template argument for 'const std::reverse_iterator<_BidIt> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xutility(4228,5):
+  or       'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)': could not deduce template argument for 'const std::move_iterator<_Iter> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\iterator(306,17):
+  or       'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept': could not deduce template argument for 'const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\iterator(488,17):
+  or       'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)': could not deduce template argument for 'const std::istreambuf_iterator<_Elem,_Traits> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\tuple(872,27):
+  or       'bool std::operator ==(const std::tuple<_Types...> &,const std::tuple<_Types...> &)'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::tuple<_Types...> &,const std::tuple<_Types...> &)': could not deduce template argument for 'const std::tuple<_Types...> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xmemory(1042,30):
+  or       'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept': could not deduce template argument for 'const std::allocator<_Ty> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(1647,27):
+  or       'bool std::operator ==(const std::basic_string_view<_Elem,_Traits>,const std::basic_string_view<_Elem,_Traits>) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::basic_string_view<_Elem,_Traits>,const std::basic_string_view<_Elem,_Traits>) noexcept': could not deduce template argument for 'const std::basic_string_view<_Elem,_Traits>' from 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(5041,30):
+  or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(5047,30):
+  or       'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(1842,17):
+  or       'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(1879,17):
+  or       'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(3470,30):
+  or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(3518,30):
+  or       'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept'
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'std::string_view'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\utility(490,27):
+  or 'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)': could not deduce template argument for 'const std::pair<_Ty1,_Ty2> &' from 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xutility(1686,5):
+  or 'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)': could not deduce template argument for 'const std::reverse_iterator<_BidIt> &' from 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xutility(4228,5):
+  or 'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)': could not deduce template argument for 'const std::move_iterator<_Iter> &' from 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\iterator(306,17):
+  or 'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept': could not deduce template argument for 'const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &' from 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\iterator(488,17):
+  or 'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)': could not deduce template argument for 'const std::istreambuf_iterator<_Elem,_Traits> &' from 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\tuple(872,27):
+  or 'bool std::operator ==(const std::tuple<_Types...> &,const std::tuple<_Types...> &)' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::tuple<_Types...> &,const std::tuple<_Types...> &)': could not deduce template argument for 'const std::tuple<_Types...> &' from 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xmemory(1042,30):
+  or 'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept': could not deduce template argument for 'const std::allocator<_Ty> &' from 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(1647,27):
+  or 'bool std::operator ==(const std::basic_string_view<_Elem,_Traits>,const std::basic_string_view<_Elem,_Traits>) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::basic_string_view<_Elem,_Traits>,const std::basic_string_view<_Elem,_Traits>) noexcept': could not deduce template argument for 'const std::basic_string_view<_Elem,_Traits>' from 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(1661,27):
+  or 'bool std::operator ==(const std::basic_string_view<_Elem,_Traits>,const _Identity<std::basic_string_view<_Elem,_Traits>>::type) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::basic_string_view<_Elem,_Traits>,const _Identity<std::basic_string_view<_Elem,_Traits>>::type) noexcept': could not deduce template argument for 'const std::basic_string_view<_Elem,_Traits>' from 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(5041,30):
+  or 'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(5047,30):
+  or 'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const ) noexcept': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(1842,17):
+  or 'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(1879,17):
+  or 'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::shared_ptr<_Ty> &' from 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(3470,30):
+  or 'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'WCHAR [256]'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\memory(3518,30):
+  or 'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept' [synthesized expression 'y == x']
+  	C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  	'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept': could not deduce template argument for 'const std::unique_ptr<_Ty,_Dx> &' from 'WCHAR [256]'
+  C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(46,23):
+  while trying to match the argument list '(std::string_view, WCHAR [256])'
+  
+  Generating Code...
