@@ -8,7 +8,7 @@
 /// This class is responsible for getting the first vital information of the game
 /// </summary>
 
-class TH32CS
+class processUtils
 {
 public:
 	static const DWORD getProcessId(const char* sProcName);
