@@ -1,7 +1,7 @@
 #include "TH32CS.h"
 #include <string_view>
 #include <memory>
-const DWORD TH32CS::getProcessId(const char* sProcName) {
+const DWORD processUtils::getProcessId(const char* sProcName) {
 
 	// a lot better then using handle as we dont have to worry abt leaking handles E.G exceptions and non existing closeHandle function calls
 	std::unique_ptr<void, decltype(&CloseHandle)> 
@@ -30,7 +30,7 @@ const DWORD TH32CS::getProcessId(const char* sProcName) {
 	throw std::runtime_error("No Process was found with the given name!");
 }
 
-const DWORD TH32CS::getModuleId(const DWORD procID, const char* moduleName){
+const DWORD processUtils::getModuleId(const DWORD procID, const char* moduleName){
 	std::unique_ptr<void, decltype(&CloseHandle)>
 		moduleSnap(CreateToolhelp32Snapshot(TH32CS_SNAPMODULE || TH32CS_SNAPMODULE32, 0),
 			&CloseHandle);
