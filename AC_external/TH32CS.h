@@ -12,6 +12,5 @@ class processUtils
 {
 public:
 	static const DWORD getProcessId(const char* sProcName);
-	static const DWORD getModuleId(const DWORD procID, const char* moduleName);														 
-
+	static const uintptr_t GetModuleBaseAddress(const DWORD procID, const wchar_t* moduleName);
 };

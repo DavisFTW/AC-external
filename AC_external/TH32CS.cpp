@@ -1,12 +1,15 @@
 #include "TH32CS.h"
 #include <string_view>
 #include <memory>
+#include <windows.h>
+#include <TlHelp32.h>
+#include <stdexcept>
+
 const DWORD processUtils::getProcessId(const char* sProcName) {
 
-	// a lot better then using handle as we dont have to worry abt leaking handles E.G exceptions and non existing closeHandle function calls
-	std::unique_ptr<void, decltype(&CloseHandle)> 
-					hProcessSnap(CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0), 
-					&CloseHandle);
+	std::unique_ptr<void, decltype(&CloseHandle)>
+		hProcessSnap(CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0),
+			&CloseHandle);
 
 	if (hProcessSnap.get() == nullptr) {
 		throw std::runtime_error("hProcessSnap contains invalid handle value !");
@@ -15,13 +18,19 @@ const DWORD processUtils::getProcessId(const char* sProcName) {
 	PROCESSENTRY32 pEntry;
 	pEntry.dwSize = sizeof(PROCESSENTRY32);
 
+	if (!Process32First(hProcessSnap.get(), &pEntry)) {
+		throw std::runtime_error("Error getting the first process");
+	}
+
 	do {
-		if (std::string_view(sProcName) == pEntry.szExeFile) {
+		char szExeFile[MAX_PATH];
+		WideCharToMultiByte(CP_ACP, 0, pEntry.szExeFile, -1, szExeFile, MAX_PATH, NULL, NULL);
+
+		if (strcmp(sProcName, szExeFile) == 0) {
 			return pEntry.th32ProcessID;
 		}
 	} while (Process32Next(hProcessSnap.get(), &pEntry));
-	
-	// ERROR ERROR ERROR
+
 	const DWORD lastError = GetLastError();
 	SetLastError(ERROR_SUCCESS);
 	if (lastError != ERROR_NO_MORE_FILES) {
@@ -30,31 +39,40 @@ const DWORD processUtils::getProcessId(const char* sProcName) {
 	throw std::runtime_error("No Process was found with the given name!");
 }
 
-const DWORD processUtils::getModuleId(const DWORD procID, const char* moduleName){
+const uintptr_t processUtils::GetModuleBaseAddress(const DWORD procID, const wchar_t* moduleName){
+
 	std::unique_ptr<void, decltype(&CloseHandle)>
-		moduleSnap(CreateToolhelp32Snapshot(TH32CS_SNAPMODULE || TH32CS_SNAPMODULE32, 0),
+		hProcessSnap(CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, procID),
 			&CloseHandle);
 
-	if (moduleSnap.get() == nullptr) {
-		throw std::runtime_error("module snapshot contains invalid handle value");
-	}
-
-	MODULEENTRY32 mEntry;
-	mEntry.dwSize = sizeof(MODULEENTRY32);
-
-	do{
-		if (std::string_view(moduleName) == mEntry.szModule) {
-			return reinterpret_cast<DWORD>(mEntry.modBaseAddr);
+	if (hProcessSnap.get() == nullptr) {
+		throw std::runtime_error("hProcessSnap contains invalid handle value !");
 		}
-	} while(Module32Next(moduleSnap.get(), &mEntry));
 
-	const DWORD lastError = GetLastError();
-	SetLastError(ERROR_SUCCESS);
+		MODULEENTRY32 modEntry;
+		modEntry.dwSize = sizeof(modEntry);
 
-	if (lastError != ERROR_NO_MORE_FILES) {
-		throw std::runtime_error("Error occurred while enumerating modules!" + std::to_string(lastError));
-	}
+		if (!Module32First(hProcessSnap.get(), &modEntry))
+		{
+			throw std::runtime_error("Error getting the first module");
+		}
+		
+		do
+		{
+			if (!_wcsicmp(modEntry.szModule, moduleName))
+			{
+				const auto modBaseAddr = reinterpret_cast<uintptr_t>(modEntry.modBaseAddr);
+				return modBaseAddr;
+			}
+		} while (Module32Next(hProcessSnap.get(), &modEntry));
 
-	throw std::runtime_error("No module was found with the given name!");
+		const DWORD lastError = GetLastError();
+		SetLastError(ERROR_SUCCESS);
+
+		if (lastError != ERROR_NO_MORE_FILES) {
+			throw std::runtime_error("Error occurred while enumerating modules!" + std::to_string(lastError));
+		}
+
+		throw std::runtime_error("No module was found with the given name!");
 }
 
