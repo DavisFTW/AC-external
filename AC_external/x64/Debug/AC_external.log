@@ -1,8 +1,0 @@
-﻿  TH32CS.cpp
-C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(20,12): error C2039: 'string_view': is not a member of 'std'
-  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\string(23,1):
-  see declaration of 'std'
-  
-C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(20,12): error C3861: 'string_view': identifier not found
-C:\Users\Admin\source\repos\AC_external\AC_external\TH32CS.cpp(48,6): error C2059: syntax error: ')'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\string_view(12): warning STL4038: The contents of <string_view> are available only with C++17 or later.
