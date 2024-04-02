@@ -21,9 +21,18 @@
     <ClCompile Include="TH32CS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="master.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TH32CS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="master.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="offsets.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

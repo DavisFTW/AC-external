@@ -130,9 +130,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AC_external.cpp" />
+    <ClCompile Include="master.cpp" />
     <ClCompile Include="TH32CS.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="master.h" />
+    <ClInclude Include="offsets.h" />
     <ClInclude Include="TH32CS.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

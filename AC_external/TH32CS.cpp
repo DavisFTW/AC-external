@@ -5,6 +5,20 @@
 #include <TlHelp32.h>
 #include <stdexcept>
 
+const HANDLE processUtils::getProcessHandle(const char* sProcName)
+{
+	const auto pid = processUtils::getProcessId(sProcName);
+
+	const auto handle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
+	
+	if(handle == nullptr)
+	{
+		throw std::runtime_error("Error occurred while opening the process handle!");
+	}
+
+	return handle;
+}
+
 const DWORD processUtils::getProcessId(const char* sProcName) {
 
 	std::unique_ptr<void, decltype(&CloseHandle)>

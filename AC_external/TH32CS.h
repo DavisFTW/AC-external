@@ -10,7 +10,9 @@
 
 class processUtils
 {
-public:
+private:
 	static const DWORD getProcessId(const char* sProcName);
 	static const uintptr_t GetModuleBaseAddress(const DWORD procID, const wchar_t* moduleName);
+public:
+	static const HANDLE getProcessHandle(const char* sProcName);
 };
