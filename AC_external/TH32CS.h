@@ -15,6 +15,7 @@ private:
 	HANDLE gameHandle;
 	const bool getProcessId(const char* sProcName);
 public:
-	 const HANDLE getProcessHandle(const char* sProcName);
+	const HANDLE getHandle() { return this->gameHandle; }
+	const bool getProcessHandle(const char* sProcName);
 	const uintptr_t GetModuleBaseAddress(const wchar_t* moduleName);
 };
