@@ -7,9 +7,11 @@
 
 const HANDLE processUtils::getProcessHandle(const char* sProcName)
 {
-	const auto pid = processUtils::getProcessId(sProcName);
+	processUtils::getProcessId(sProcName);
 
-	const auto handle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
+	std::cout << this->procID;
+
+	const auto handle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, this->procID);
 	
 	if(handle == nullptr)
 	{
@@ -19,7 +21,7 @@ const HANDLE processUtils::getProcessHandle(const char* sProcName)
 	return handle;
 }
 
-const DWORD processUtils::getProcessId(const char* sProcName) {
+const bool processUtils::getProcessId(const char* sProcName) {
 
 	std::unique_ptr<void, decltype(&CloseHandle)>
 		hProcessSnap(CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0),
@@ -41,7 +43,8 @@ const DWORD processUtils::getProcessId(const char* sProcName) {
 		WideCharToMultiByte(CP_ACP, 0, pEntry.szExeFile, -1, szExeFile, MAX_PATH, NULL, NULL);
 
 		if (strcmp(sProcName, szExeFile) == 0) {
-			return pEntry.th32ProcessID;
+			this->procID = pEntry.th32ProcessID;
+			return true;
 		}
 	} while (Process32Next(hProcessSnap.get(), &pEntry));
 
@@ -53,11 +56,11 @@ const DWORD processUtils::getProcessId(const char* sProcName) {
 	throw std::runtime_error("No Process was found with the given name!");
 }
 
-const uintptr_t processUtils::GetModuleBaseAddress(const DWORD procID, const wchar_t* moduleName){
+const uintptr_t processUtils::GetModuleBaseAddress(const wchar_t* moduleName){
 
 	std::unique_ptr<void, decltype(&CloseHandle)>
-		hProcessSnap(CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, procID),
-			&CloseHandle);
+		hProcessSnap(CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, this->procID),
+																						&CloseHandle);
 
 	if (hProcessSnap.get() == nullptr) {
 		throw std::runtime_error("hProcessSnap contains invalid handle value !");
@@ -76,6 +79,7 @@ const uintptr_t processUtils::GetModuleBaseAddress(const DWORD procID, const wch
 			if (!_wcsicmp(modEntry.szModule, moduleName))
 			{
 				const auto modBaseAddr = reinterpret_cast<uintptr_t>(modEntry.modBaseAddr);
+				std::cout << "modBaseAddr" << std::hex << modBaseAddr << std::endl;
 				return modBaseAddr;
 			}
 		} while (Module32Next(hProcessSnap.get(), &modEntry));
