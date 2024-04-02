@@ -1,7 +1,7 @@
 #pragma once
 #include <Windows.h>
 #include "TH32CS.h"
-class master
+class master : public processUtils
 {
 private:
 	const HANDLE gameHandle;

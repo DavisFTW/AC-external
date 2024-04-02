@@ -12,8 +12,8 @@ class processUtils
 {
 private:
 	DWORD procID = 0;
-
-	 const bool getProcessId(const char* sProcName);
+	HANDLE gameHandle;
+	const bool getProcessId(const char* sProcName);
 public:
 	 const HANDLE getProcessHandle(const char* sProcName);
 	const uintptr_t GetModuleBaseAddress(const wchar_t* moduleName);

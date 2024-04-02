@@ -5,11 +5,11 @@
 #include <TlHelp32.h>
 #include <stdexcept>
 
-const HANDLE processUtils::getProcessHandle(const char* sProcName)
+const bool processUtils::getProcessHandle(const char* sProcName)
 {
 	processUtils::getProcessId(sProcName);
 
-	std::cout << this->procID;
+	//std::cout << this->procID;
 
 	const auto handle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, this->procID);
 	
@@ -18,7 +18,8 @@ const HANDLE processUtils::getProcessHandle(const char* sProcName)
 		throw std::runtime_error("Error occurred while opening the process handle!");
 	}
 
-	return handle;
+	this->gameHandle = handle;
+	return true;
 }
 
 const bool processUtils::getProcessId(const char* sProcName) {
@@ -79,7 +80,7 @@ const uintptr_t processUtils::GetModuleBaseAddress(const wchar_t* moduleName){
 			if (!_wcsicmp(modEntry.szModule, moduleName))
 			{
 				const auto modBaseAddr = reinterpret_cast<uintptr_t>(modEntry.modBaseAddr);
-				std::cout << "modBaseAddr" << std::hex << modBaseAddr << std::endl;
+				//std::cout << "modBaseAddr" << std::hex << modBaseAddr << std::endl;
 				return modBaseAddr;
 			}
 		} while (Module32Next(hProcessSnap.get(), &modEntry));
