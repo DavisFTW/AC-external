@@ -1,12 +1,13 @@
 #pragma once
 #include <Windows.h>
+#include "TH32CS.h"
 class master
 {
 private:
 	const HANDLE gameHandle;
 	const DWORD localPLayer = 0x018B0B8;  // have to add the base address of the game
 public:
-	master(HANDLE handle) : gameHandle(handle) { };
+	master(const char* sProcName) : gameHandle(processUtils::getProcessHandle(sProcName)) {};
 	bool getLocalPLayer();
 };
 
