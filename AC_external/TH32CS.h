@@ -11,11 +11,13 @@
 class processUtils
 {
 private:
-	DWORD procID = 0;
 	HANDLE gameHandle;
-	const bool getProcessId(const char* sProcName);
+	const DWORD getProcessId(const char* sProcName);
 public:
+	DWORD procID;
+
+	//functions
 	const HANDLE getHandle() { return this->gameHandle; }
 	const bool getProcessHandle(const char* sProcName);
-	const uintptr_t GetModuleBaseAddress(const wchar_t* moduleName);
+	static const uintptr_t GetModuleBaseAddress(const DWORD procID, const wchar_t* moduleName);
 };

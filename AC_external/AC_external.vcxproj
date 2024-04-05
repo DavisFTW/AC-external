@@ -136,6 +136,7 @@
   <ItemGroup>
     <ClInclude Include="master.h" />
     <ClInclude Include="offsets.h" />
+    <ClInclude Include="templates.h" />
     <ClInclude Include="TH32CS.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

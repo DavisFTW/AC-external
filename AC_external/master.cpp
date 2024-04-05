@@ -1,7 +1,13 @@
 #include "master.h"
 #include <iostream>
+#include "offsets.h"
 
-bool master::getLocalPLayer()
+
+master::master(const processUtils& pUtils) : pUtils(pUtils) {
+}
+
+// Function definition
+const DWORD master::getLocalPLayer()
 {
-	return false;
+    return 1;
 }

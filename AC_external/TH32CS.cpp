@@ -7,11 +7,11 @@
 
 const bool processUtils::getProcessHandle(const char* sProcName)
 {
-	processUtils::getProcessId(sProcName);
+	this->procID = processUtils::getProcessId(sProcName);
 
 	//std::cout << this->procID;
 
-	const auto handle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, this->procID);
+	const auto handle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, procID);
 	
 	if(handle == nullptr)
 	{
@@ -22,7 +22,7 @@ const bool processUtils::getProcessHandle(const char* sProcName)
 	return true;
 }
 
-const bool processUtils::getProcessId(const char* sProcName) {
+const DWORD processUtils::getProcessId(const char* sProcName) {
 
 	std::unique_ptr<void, decltype(&CloseHandle)>
 		hProcessSnap(CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0),
@@ -44,8 +44,7 @@ const bool processUtils::getProcessId(const char* sProcName) {
 		WideCharToMultiByte(CP_ACP, 0, pEntry.szExeFile, -1, szExeFile, MAX_PATH, NULL, NULL);
 
 		if (strcmp(sProcName, szExeFile) == 0) {
-			this->procID = pEntry.th32ProcessID;
-			return true;
+			return pEntry.th32ProcessID;
 		}
 	} while (Process32Next(hProcessSnap.get(), &pEntry));
 
@@ -57,11 +56,11 @@ const bool processUtils::getProcessId(const char* sProcName) {
 	throw std::runtime_error("No Process was found with the given name!");
 }
 
-const uintptr_t processUtils::GetModuleBaseAddress(const wchar_t* moduleName){
+const uintptr_t processUtils::GetModuleBaseAddress(const DWORD procID, const wchar_t* moduleName){
 
 	std::unique_ptr<void, decltype(&CloseHandle)>
-		hProcessSnap(CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, this->procID),
-																						&CloseHandle);
+		hProcessSnap(CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, procID),
+																					&CloseHandle);
 
 	if (hProcessSnap.get() == nullptr) {
 		throw std::runtime_error("hProcessSnap contains invalid handle value !");
